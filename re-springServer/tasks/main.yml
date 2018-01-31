@@ -1,3 +1,7 @@
 ---
- - name: Copy and extract server file
-   unarchive: src=spring-servlet-0.0.1-SNAPSHOT.war dest=~/apache-tomcat-9.0.4/webapps
+ - name: Stop tomcat
+   command: sh ~/apache-tomcat-9.0.4/bin/shutdown.sh
+ - name: Copy file
+   copy: src=spring-servlet-0.0.1-SNAPSHOT.war dest=~/apache-tomcat-9.0.4/webapps
+ - name: Start tomcat
+   command: sh ~/apache-tomcat-9.0.4/bin/startup.sh
