@@ -1,0 +1,4 @@
+---
+- hosts: "{{vm}}"
+  roles:
+     - { role: re-giot }

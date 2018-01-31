@@ -1,0 +1,17 @@
+nodeJS ansible_host=10.5.161.5 ansible_user=stone ansible_ssh_pass=ther753 ansible_sudo_pass=ther753
+gemtek.ubuntu ansible_host=10.5.161.154 ansible_user=gemtek ansible_ssh_pass=123456
+
+[stone]
+gemtek.ubuntu
+
+[stone1]
+gemtek.ubuntu
+
+[nodejs]
+nodeJS
+
+[plan:children]
+stone
+
+#[plan:vars]
+#some_server=10.5.161.21 ansible_user=gemtek ansible_ssh_pass=123456
