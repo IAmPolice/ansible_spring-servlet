@@ -1,4 +1,4 @@
 ---
 - hosts: "{{vm}}"
   roles:
-     - { role: re-giot }
+     - { role: re-springServer }
