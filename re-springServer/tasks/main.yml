@@ -1,7 +1,13 @@
 ---
- - name: Stop tomcat
-   command: sh ~/apache-tomcat-9.0.4/bin/shutdown.sh
+ - name: tomcat stop
+   become: true
+   systemd:
+     name: tomcat
+     state: stopped
  - name: Copy file
    copy: src=spring-servlet-0.0.1-SNAPSHOT.war dest=~/apache-tomcat-9.0.4/webapps
- - name: Start tomcat
-   command: sh ~/apache-tomcat-9.0.4/bin/startup.sh
+ - name: tomcat start
+   become: true
+   systemd:
+     name: tomcat
+     state: started
